@@ -1,72 +1,170 @@
-@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900);
-@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
+@import url('https://fonts.googleapis.com/css?family=Elsie+Swash+Caps');
+@import url('https://fonts.googleapis.com/css?family=Clicker+Script');
+
 
 /* This 
-is 
-a comment! */
+is a comment */
+
 
 /* CSS Syntax:
 
 selector {
-  property: value;
-  property: value;
-}
+	property: value;
+	property: value;
+} 
 
-*/
+*/ 
 
-/* Type selector */
+/* Type selector */ 
 
-p { /* select all <p> */
-  font-size: 1em; /* 16px, ?pt, 100%, 1em */
-  line-height: 1.5em;
+p {/* select all <p> */
+	font-size: 1em; /* 16px, ?pt, 100%, 1em */
+	line-height: 1.5em;
 }
 
 figcaption {
-  /*font-weight: normal;
-  font-size: 0.75em;
-  line-height: 1.5em;
-  font-family: Georgia, "New Times Roman", serif;*/
-  font: normal 0.75em/1.5em 'Elsie Swash Caps', cursive;
-  color: #777;
-  text-align: right;
+	/*font-weight: normal;
+	font-size: 0.75em;
+	line-height: 1.5em;
+	font-family: Georgia, "New Times Roman", serif; 
+
+	The code below does everything the code above does in one line*/
+	font: normal 0.75em/1.5em 'Elsie swash caps', cursive;
+	color: #777;
+	text-align: right;
 }
 
-/* Class selector (applied to as many elements as you like) */
 
-.milk-text { /* select elements with class="milk-text" */
-  font: bold 2.6em 'Elsie Swash Caps', cursive;
-  color: white;
-  text-shadow: 0 2px 3px #000;
+/* Class selectors */ 
+
+/* Applied to as many elements as you like */
+
+.milk-text{ /*  select elements with a class attribute class="milk-text"
+	*/
+	font: bold 2.6em 'Elsie Swash Caps', cursive;
+	color: white;
+	text-shadow: 0 2px 3px #000;
+
 }
 
-/* ID selector (apply to one unique element per page) */
 
-#logo { /* select elements with id="logo" */
-  background: aqua;
+/* ID selector (apply to one unique element per page)*/ 
+
+ #logo{ /* Select elements with the id= "logo"*/ 
+ 	
+
+ }
+
+ /* Descendent Selector */
+
+ #logo h1 {
+ 	/* selects <h1> if they are inside an element with the id of logo */ 
+ 	font-family: 'Clicker Script', cursive;
+ }
+
+ #logo h2 {
+ 	font-family: 'Elsie Swash Caps', cursive;
+ } 
+
+ /* Psuedo Selector */ 
+
+ #details a:link, #details a:visited {
+ 	color: black;
+ 	text-decoration: none;
+ }
+
+ #details a:hover {
+ 	color: black;
+ 	text-decoration: underline;
+ }
+
+ #details a:active {
+ 	color: red;
+ }
+
+/*// Media //*/ 
+
+img, video, audio {
+	max-width: 100%;
 }
 
-/* Descendent Selector */
+ /*/// LAYOUT ///*/ 
 
-#logo h1 { /* selects <h1> if inside the id="logo" */
-  font-family: 'Clicker Script', cursive;
+ * {
+ 	-webkit-box-sizing: border-box;
+ 	-moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+ }
+
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
 }
 
-#logo h2 {
-  font-family: 'Elsie Swash Caps', cursive;
+.col-1 {
+	float: left;
+	width: 32%;
+	background: #ccc;
 }
 
-/* Psuedo Selector */
-
-#details a:link, #details a:visited {
-  color: black;
-  text-decoration: none;
+.col-2 {
+	float: left;
+	width: 66%;
+	background: #ccc;
 }
 
-#details a:hover {
-  color: black;
-  text-decoration: underline;
+.col-3 {
+	background: #ccc;
+} 
+
+.clearfix:after {
+	content: "."; 
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0; 
+	line-height: 0;
+} 
+
+[class*="col-"] {
+	margin-left: 2%;
 }
 
-#details a:active {
-  color: red;
+.first {
+	margin-left: 0%;
 }
+
+
+ /*/// SECTION ///*/ 
+
+ header {
+ 	position: fixed;
+ 	top: 0;
+ 	left: 0;
+ 	width: 100%;
+ 	background: #fff;
+ 	z-index: 1;
+ } 
+
+ section {
+ 	padding: 20px;
+ 	margin-bottom: 20px;
+ }
+
+  /*/// SOCIAL ///*/ 
+
+  #social {
+  	position: fixed;
+  	top: 200px ;
+  	right: 20px;
+  	width: 40px;
+  	z-index: 1;
+  } 
+
+  #social a {
+  	display: block;
+  	width: 40px;
+  	height: 40px;
+  	background: yellow;
+
+  }
